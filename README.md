@@ -1,1 +1,1 @@
-# news-summary
+# NewsBrief
