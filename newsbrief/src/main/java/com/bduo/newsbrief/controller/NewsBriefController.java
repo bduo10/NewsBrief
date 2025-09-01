@@ -13,7 +13,7 @@ public class NewsBriefController {
 
     private final NewsBriefService newsBriefService;
     public NewsBriefController(NewsBriefService newsBriefService) {
-        this.newsBriefService = newsBriefService
+        this.newsBriefService = newsBriefService;
     }
 
     @GetMapping(value = "/general-brief", produces = MediaType.APPLICATION_JSON_VALUE)

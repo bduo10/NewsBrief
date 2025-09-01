@@ -5,13 +5,12 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class NewsSummaryResponse {
-    private String summary;
-    private LocalDateTime createdAt;
+public class OllamaRequest {
+    private String model;
+    private String prompt;
+    private boolean stream;
 }
