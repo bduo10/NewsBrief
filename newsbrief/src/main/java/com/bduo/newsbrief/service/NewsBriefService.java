@@ -7,6 +7,7 @@ import com.bduo.newsbrief.dto.NewsSummaryResponse;
 import com.bduo.newsbrief.dto.OllamaResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -22,6 +23,7 @@ public class NewsBriefService {
         this.ollamaClient = ollamaClient;
     }
 
+    @Cacheable(value="newsBriefCache", key="#root.method.name")
     public NewsSummaryResponse generateGeneralNewsBrief() {
         final NewsApiResponse newsApiResponse = newsApiClient.getTopHeadlines();
         log.info("Request summary for {} articles", newsApiResponse.getArticles().size());
